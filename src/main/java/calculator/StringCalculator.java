@@ -58,3 +58,19 @@ class StringCalculator {
 
         return numbers.substring(customDelimiterEnd + 1).replace(customDelimiter, DEFAULT_DELIMITER);
     }
+    private String[] getStringArray(String numbers) {
+        return numbers.replace(NEWLINE, DEFAULT_DELIMITER).split(DEFAULT_DELIMITER);
+    }
+    private void calculateSumOf(String[] numbers) {
+        for (String number : numbers)
+            result = Float.sum(result, Float.parseFloat(number));
+    }
+    private boolean hasDecimalPlaces() {
+        return result % 1 != 0;
+    }
+    private String printFloat() {
+        return Float.toString((float) (Math.round(result * 100.0) / 100.0));
+    }
+    private String printInteger() {
+        return String.valueOf((int) result);
+    }}
