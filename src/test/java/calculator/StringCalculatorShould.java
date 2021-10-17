@@ -1,10 +1,18 @@
 package calculator;
 
-import org.junit.jupiter.api.Test;
+class StringCalculator {
+    private float result;
+    private String customDelimiter;
 
-import static org.junit.jupiter.api.Assertions.*;
+    private static final String DEFAULT_DELIMITER = ",";
+    private static final String NEWLINE = "\n";
+    private static final String CUSTOM_DELIMITER_PREFIX = "/";
+    private static final String CUSTOM_DELIMITER_SUFFIX = NEWLINE;
 
-class StringCalculatorShould {
+    StringCalculator() {
+        result = 0;
+        customDelimiter = "";
+    }
 
     @Test
     void empty_string_should_return_0() {
